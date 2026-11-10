@@ -1,0 +1,19 @@
+{
+  "name": "all-that",
+  "version": "0.1.0",
+  "private": true,
+  "description": "One admin hub for every app MJ runs.",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --test test/*.test.js",
+    "hash-password": "node scripts/hash-password.js"
+  },
+  "devDependencies": {
+    "wrangler": "4.160.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

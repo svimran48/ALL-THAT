@@ -1,0 +1,31 @@
+name = "all-that"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Every request goes through the worker first, so nothing in public/ is served before the
+# session check.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+html_handling = "none"
+
+# Health checks every 5 minutes feed the uptime strip on each card.
+[triggers]
+crons = ["*/5 * * * *"]
+
+# Uptime history. Create it once with:  npx wrangler kv namespace create HISTORY
+# then paste the id here and uncomment.
+# [[kv_namespaces]]
+# binding = "HISTORY"
+# id = "<paste id>"
+
+[vars]
+SESSION_VERSION = "1"
+# Live URLs that aren't in src/apps.config.js yet, as JSON. Example:
+# APP_URLS = '{"kestrel":"https://kestrel.example.com","seasonbook":"https://seasonbook.you.workers.dev"}'
+
+# Secrets (never put these here):
+#   npx wrangler secret put SESSION_SECRET          # 32+ random characters
+#   node scripts/hash-password.js | npx wrangler secret put OWNER_PASSWORD_HASH
+#   npx wrangler secret put KESTREL_ADMIN_TOKEN     # optional, read-only
