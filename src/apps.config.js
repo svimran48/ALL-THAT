@@ -58,6 +58,44 @@ export const APPS = [
       { label: 'Notifications', path: '/api/notify/status' },
     ],
   },
+  // The apps below were found on MJ's PC (not in the svimran48 GitHub account). Their live
+  // URLs and admin routes aren't known yet: set them in APP_URLS or here.
+  {
+    id: 'a1score',
+    name: 'A1 Score',
+    kind: 'Next.js web app with a Prisma database',
+    repo: null,
+    baseUrl: null,
+    adminUrl: '/',
+    health: { path: '/', json: false },
+    metrics: null,
+    tokenSecret: null,
+    links: [],
+  },
+  {
+    id: 'sportzfylive',
+    name: 'Sportzfy Live',
+    kind: 'Live sports website',
+    repo: null,
+    baseUrl: null,
+    adminUrl: '/',
+    health: { path: '/', json: false },
+    metrics: null,
+    tokenSecret: null,
+    links: [],
+  },
+  {
+    id: 'stream-proxy',
+    name: 'Stream Proxy',
+    kind: 'Node stream proxy service',
+    repo: null,
+    baseUrl: null,
+    adminUrl: '/',
+    health: { path: '/', json: false },
+    metrics: null,
+    tokenSecret: null,
+    links: [],
+  },
 ];
 
 /** Joins an app's base URL and a path. Returns null when the app has no base URL. */

@@ -11,6 +11,11 @@ It is a single Cloudflare Worker with no runtime dependencies.
 | Kestrel (`spy-pro`) | not set yet | `/api/auth/status`; fleet numbers once `KESTREL_ADMIN_TOKEN` is set | dashboard, devices, alerts, billing, audit log |
 | Season Challenger | `season-challenger-api.onrender.com` | `/health` (database and feed) | KYC review page at `/review` |
 | Seasonbook | not set yet | `/api` and `/api/notify/status` | the PWA, API docs |
+| A1 Score | not set yet | home page up/down | the site |
+| Sportzfy Live | not set yet | home page up/down | the site |
+| Stream Proxy | not set yet | home page up/down | the service |
+
+A1 Score, Sportzfy Live and Stream Proxy live on the owner's PC rather than in this GitHub account. Once their live URLs and admin routes are known, add them to `APP_URLS` and give each an adapter in `src/adapters.js` for richer numbers.
 
 Add or change apps in `src/apps.config.js`. Live URLs can also be set without a code change through the `APP_URLS` var in `wrangler.toml`.
 
